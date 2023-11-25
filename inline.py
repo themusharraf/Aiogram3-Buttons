@@ -17,11 +17,11 @@ builder_shop.row(types.InlineKeyboardButton(
 
 apple_shop = InlineKeyboardBuilder()
 apple_shop.row(types.InlineKeyboardButton(
-    text="Apple 14", url="https://www.python.org/")
+    text="Apple 14", url="https://www.apple.com/uz/iphone-14-pro/specs/")
 )
 redmi_shop = InlineKeyboardBuilder()
 redmi_shop.row(types.InlineKeyboardButton(
-    text="Redmi 12", url="https://www.python.org/")
+    text="Redmi 12", url="https://mi-store.uz/shop/redmi-note-12-pro-plus-5g")
 )
 
 builder_random = InlineKeyboardBuilder()
