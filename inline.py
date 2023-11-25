@@ -10,6 +10,11 @@ builder.row(types.InlineKeyboardButton(
     url="https://docs.aiogram.dev/en/latest/")
 )
 
+builder_shop = InlineKeyboardBuilder()
+builder_shop.row(types.InlineKeyboardButton(
+    text="Python", url="https://www.python.org/")
+)
+
 builder_random = InlineKeyboardBuilder()
 builder_random.add(types.InlineKeyboardButton(
     text="Knopkani bosing",

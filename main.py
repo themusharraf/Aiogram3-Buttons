@@ -6,7 +6,7 @@ from aiogram.filters.command import Command
 from keyboards import keyboard, builder_one
 from config import token
 from random import randint
-from inline import builder, builder_random
+from inline import builder, builder_random, builder_shop
 
 bot = Bot(token=token)
 dp = Dispatcher()
@@ -24,7 +24,8 @@ async def buttons(message: types.Message):
 
 @dp.message(Command("inl"))
 async def button(message: types.Message):
-    await message.answer_photo(photo="https://images.app.goo.gl/j9DisEm4jsxcMw7V7",caption="inline button!", reply_markup=builder.as_markup())
+    await message.answer_photo(photo="https://images.app.goo.gl/j9DisEm4jsxcMw7V7", caption="inline button!",
+                               reply_markup=builder.as_markup())
 
 
 @dp.message(Command("rep"))
@@ -33,6 +34,16 @@ async def reply_builder(message: types.Message):
         "date choice:",
         reply_markup=builder_one.as_markup(resize_keyboard=True),
     )
+
+    @dp.message(F.text == "2")
+    async def reply(message: types.Message):
+        await message.answer(" 2- raqam")
+
+
+@dp.message(Command("shop"))
+async def shop(message: types.Message):
+    await message.answer_photo(photo="https://images.app.goo.gl/j9DisEm4jsxcMw7V7", caption="choices list",
+                               reply_markup=builder_shop.as_markup())
 
 
 @dp.message(Command("random"))
