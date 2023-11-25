@@ -1,9 +1,13 @@
 import asyncio
 import logging
+
+from aiogram.utils.keyboard import ReplyKeyboardBuilder
+
 from config import token
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 from keyboards import keyboard
+from inline import builder
 
 bot = Bot(token=token)
 dp = Dispatcher()
@@ -21,7 +25,19 @@ async def buttons(message: types.Message):
 
 @dp.message(Command("in_url"))
 async def button(message: types.Message):
-    await message.answer("inline button!")
+    await message.answer("inline button!", reply_markup=builder.as_markup())
+
+
+@dp.message(Command("reply_builder"))
+async def reply_builder(message: types.Message):
+    builder = ReplyKeyboardBuilder()
+    for i in range(1, 17):
+        builder.add(types.KeyboardButton(text=str(i)))
+    builder.adjust(4)
+    await message.answer(
+        "Выберите число:",
+        reply_markup=builder.as_markup(resize_keyboard=True),
+    )
 
 
 async def main():
