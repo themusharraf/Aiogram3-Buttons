@@ -1,11 +1,9 @@
 import asyncio
 import logging
-
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
-
 from config import token
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
+from keyboards import keyboard
 
 bot = Bot(token=token)
 dp = Dispatcher()
@@ -18,7 +16,12 @@ async def cmd_start(message: types.Message):
 
 @dp.message(Command("buttons"))
 async def buttons(message: types.Message):
-    ...
+    await message.answer("location or contact", reply_markup=keyboard)
+
+
+@dp.message(Command("in_url"))
+async def button(message: types.Message):
+    await message.answer("inline button!")
 
 
 async def main():
