@@ -9,3 +9,9 @@ builder.row(types.InlineKeyboardButton(
     text="Aiogram Documentation",
     url="tg://@all_nc")
 )
+
+builder_random = InlineKeyboardBuilder()
+builder_random.add(types.InlineKeyboardButton(
+    text="Knopkani bosing",
+    callback_data="random_son")
+)
