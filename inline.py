@@ -15,6 +15,15 @@ builder_shop.row(types.InlineKeyboardButton(
     text="Python", url="https://www.python.org/")
 )
 
+apple_shop = InlineKeyboardBuilder()
+apple_shop.row(types.InlineKeyboardButton(
+    text="Apple 14", url="https://www.python.org/")
+)
+redmi_shop = InlineKeyboardBuilder()
+redmi_shop.row(types.InlineKeyboardButton(
+    text="Redmi 12", url="https://www.python.org/")
+)
+
 builder_random = InlineKeyboardBuilder()
 builder_random.add(types.InlineKeyboardButton(
     text="Knopkani bosing",

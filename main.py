@@ -6,7 +6,7 @@ from aiogram.filters.command import Command
 from config import token
 from random import randint
 from keyboards import keyboard, builder_one, keyboard_shop
-from inline import builder, builder_random, builder_shop  # builder_shop_list
+from inline import builder, builder_random, builder_shop, redmi_shop, apple_shop
 
 bot = Bot(token=token)
 dp = Dispatcher()
@@ -49,9 +49,15 @@ async def shop(message: types.Message):
 @dp.message(Command("shop_list"))
 async def shop_list(message: types.Message):
     await message.answer(
-        "shop choice:",
-        reply_markup=keyboard_shop(resize_keyboard=True),
-    )
+        "shop choice:", reply_markup=keyboard_shop)
+
+    @dp.message(F.text == "Apple")
+    async def reply(message: types.Message):
+        await message.answer_photo(photo="", caption="Apple mobile", reply_markup=apple_shop.as_markup())
+
+    @dp.message(F.text == "Redmi")
+    async def reply1(message: types.Message):
+        await message.answer_photo(photo="", caption="Redmi mobile", reply_markup=redmi_shop.as_markup())
 
 
 @dp.message(Command("random"))
