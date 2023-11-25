@@ -3,10 +3,10 @@ import logging
 from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
-from keyboards import keyboard, builder_one
 from config import token
 from random import randint
-from inline import builder, builder_random, builder_shop,builder_shop_list
+from keyboards import keyboard, builder_one, keyboard_shop
+from inline import builder, builder_random, builder_shop  # builder_shop_list
 
 bot = Bot(token=token)
 dp = Dispatcher()
@@ -50,7 +50,7 @@ async def shop(message: types.Message):
 async def shop_list(message: types.Message):
     await message.answer(
         "shop choice:",
-        reply_markup=builder_shop_list.as_markup(resize_keyboard=True),
+        reply_markup=keyboard_shop(resize_keyboard=True),
     )
 
 
