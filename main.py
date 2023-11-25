@@ -53,11 +53,13 @@ async def shop_list(message: types.Message):
 
     @dp.message(F.text == "Apple")
     async def reply(message: types.Message):
-        await message.answer_photo(photo="", caption="Apple mobile", reply_markup=apple_shop.as_markup())
+        await message.answer_photo(photo="https://images.app.goo.gl/AXAEmhASs8XDZJW59", caption="Apple mobile",
+                                   reply_markup=apple_shop.as_markup())
 
     @dp.message(F.text == "Redmi")
     async def reply1(message: types.Message):
-        await message.answer_photo(photo="", caption="Redmi mobile", reply_markup=redmi_shop.as_markup())
+        await message.answer_photo(photo="https://images.app.goo.gl/KHziYnJH51SoJunz7", caption="Redmi mobile",
+                                   reply_markup=redmi_shop.as_markup())
 
 
 @dp.message(Command("random"))
