@@ -22,9 +22,9 @@ async def buttons(message: types.Message):
     await message.answer("location or contact", reply_markup=keyboard)
 
 
-@dp.message(Command("in_url"))
+@dp.message(Command("inl"))
 async def button(message: types.Message):
-    await message.answer("inline button!", reply_markup=builder.as_markup())
+    await message.answer_photo(photo="https://images.app.goo.gl/j9DisEm4jsxcMw7V7",caption="inline button!", reply_markup=builder.as_markup())
 
 
 @dp.message(Command("rep"))

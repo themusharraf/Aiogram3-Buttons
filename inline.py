@@ -7,7 +7,7 @@ builder.row(types.InlineKeyboardButton(
 )
 builder.row(types.InlineKeyboardButton(
     text="Aiogram Documentation",
-    url="tg://@all_nc")
+    url="https://docs.aiogram.dev/en/latest/")
 )
 
 builder_random = InlineKeyboardBuilder()
