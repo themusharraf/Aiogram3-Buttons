@@ -28,14 +28,14 @@ async def button(message: types.Message):
     await message.answer("inline button!", reply_markup=builder.as_markup())
 
 
-@dp.message(Command("reply_builder"))
+@dp.message(Command("rep"))
 async def reply_builder(message: types.Message):
     builder = ReplyKeyboardBuilder()
-    for i in range(1, 17):
+    for i in range(1, 20):
         builder.add(types.KeyboardButton(text=str(i)))
     builder.adjust(4)
     await message.answer(
-        "Выберите число:",
+        "date choice:",
         reply_markup=builder.as_markup(resize_keyboard=True),
     )
 
