@@ -7,6 +7,12 @@ button = [
 ]
 keyboard = types.ReplyKeyboardMarkup(keyboard=button, resize_keyboard=True)
 
+button_shop = [
+    [types.KeyboardButton(text="Apple")],
+    [types.KeyboardButton(text="Redmi")],
+]
+keyboard_shop = types.ReplyKeyboardMarkup(keyboard=button_shop, resize_keyboard=True)
+
 builder_one = ReplyKeyboardBuilder()
 for i in range(1, 20):
     builder_one.add(types.KeyboardButton(text=str(i)))
